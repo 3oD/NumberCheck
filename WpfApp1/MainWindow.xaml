@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Mein Zahl" Height="194.614" Width="299.473" Icon="Images/App_ico.ico">
+    <Grid Margin="0,0,-3,-1" Background="#FF525252">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="Zahl" HorizontalAlignment="Left" Margin="83,23,0,0" TextWrapping="Wrap" Text="Deine Zahl:" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.533" Foreground="White"/>
+        <TextBox x:Name="Zahl_Textbox" HorizontalAlignment="Left" Height="20" Margin="83,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" AutomationProperties.HelpText="Gib etwas ein" TextChanged="Zahl_Textbox_TextChanged" ScrollViewer.CanContentScroll="True">
+            <TextBox.Effect>
+                <DropShadowEffect Opacity="0.3" BlurRadius="4" ShadowDepth="2"/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button x:Name="OK_Button" Content="OK" HorizontalAlignment="Left" Margin="37,91,0,0" VerticalAlignment="Top" Width="74" Click="OK_Button_Click" IsDefault="True">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="4" Opacity="0.5" ShadowDepth="4"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="Close_Button" Content="Close" HorizontalAlignment="Left" Margin="170,91,0,0" VerticalAlignment="Top" Width="74" IsCancel="True" Click="Close_Button_Click" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="4" Opacity="0.5" ShadowDepth="4"/>
+            </Button.Effect>
+        </Button>
+        <TextBlock x:Name="output" HorizontalAlignment="Left" Margin="23,127,0,0" TextWrapping="Wrap" Text="Hallo ;)" VerticalAlignment="Top" TextAlignment="Center" Width="243" Foreground="White" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

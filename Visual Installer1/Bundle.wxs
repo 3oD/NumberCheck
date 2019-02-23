@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:vi="http://schemas.visualinstaller.de/VisualInstallerWixExtension">
+
+  <Bundle Name="NumberCheck" Version="1.0.1.6"
+         Manufacturer="Sebastian Gey"
+         UpgradeCode="3554e221-822f-41ed-9450-3205437b7c00"
+         SplashScreenSourceFile="Resources\splash.bmp"
+         IconSourceFile="Resources\App_ico.ico"
+             >
+
+    <!--<Update Location="http://test.laika42.com/UpdateInfo.xml"/>-->
+
+    <!-- Payload, that has to be added to run the boostrapper application -->
+    <BootstrapperApplicationRef Id='ManagedBootstrapperApplicationHost'>
+      <PayloadGroupRef Id='VisualInstallerRuntimeFiles'/>
+    </BootstrapperApplicationRef>
+
+
+    <Variable Name='LICENSESTRING' bal:Overridable='yes' Value=''/>
+    <Variable Name='SQLCONNECTIONSTRING' bal:Overridable='yes' Value=''/>
+    <Variable Name="INSTALLDIR" bal:Overridable='yes' Value='[ProgramFilesFolder]numberCheck'/>
+    
+    <Chain>
+
+      <PackageGroupRef Id='NetFx40Web' />
+
+      <!-- TODO: Define the list of chained packages. -->
+      <MsiPackage SourceFile="C:\Users\xXEli\source\repos\gitlab_Zahl\AI_NumberCheck\AI_NumberCheck-SetupFiles\AI_NumberCheck.msi" >
+        <vi:ExtendedInstallSize InstallDirProperty='INSTALLFOLDER'  /> 
+      </MsiPackage>
+    
+    </Chain>
+  </Bundle>
+</Wix>
