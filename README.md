@@ -15,4 +15,4 @@ AI_NumberCheck/AI_NumberCheck-SetupFiles
 
 ### Website
 
-You can find further information about me and other projects on my [homepage](http://www.sgey.me)
+You can find further information about me and other projects on my [homepage](http://www.sgey.de)
